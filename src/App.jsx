@@ -54,7 +54,7 @@ export default function App() {
     const teacherName = isJessy ? 'Jessy' : 'Mafe';
     const teacherPhone = isJessy ? '573116987216' : '573104016167';
 
-    const textMsg = `¡Hola profe ${teacherName}! Mi nombre es ${formData.parentName}. Deseo información e inscribir a mi peque ${formData.childName} (${formData.childAge}) a Hora de Aventura. ${formData.message ? `Comentario adicional: ${formData.message}` : ''}`;
+    const textMsg = `¡Hola Teacher ${teacherName}! Mi nombre es ${formData.parentName}. Deseo información e inscribir a mi peque ${formData.childName} (${formData.childAge}) a Hora de Aventura. ${formData.message ? `Comentario adicional: ${formData.message}` : ''}`;
     const whatsappUrl = `https://wa.me/${teacherPhone}?text=${encodeURIComponent(textMsg)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -112,7 +112,7 @@ export default function App() {
             <a href="#edades" onClick={() => setMobileMenuOpen(false)}>Edades</a>
             <a href="#semana" onClick={() => setMobileMenuOpen(false)}>Programación</a>
             <a href="#beneficios" onClick={() => setMobileMenuOpen(false)}>Beneficios</a>
-            <a href="#profesoras" onClick={() => setMobileMenuOpen(false)}>Profesoras</a>
+            <a href="#teachers" onClick={() => setMobileMenuOpen(false)}>teachers</a>
             <a 
               href="#contacto" 
               className="nav-btn-cta" 
@@ -156,7 +156,7 @@ export default function App() {
             </h1>
 
             <p className="hero-desc">
-              Un espacio mágico, cálido y seguro dirigido por las profes <strong>Mafe</strong> y <strong>Jessy</strong>, donde los niños viven experiencias divertidas y profundamente significativas a través del juego, el arte, la literatura y la exploración.
+              Un espacio mágico, cálido y seguro dirigido por las Teachers <strong>Mafe</strong> y <strong>Jessy</strong>, donde los niños viven experiencias divertidas y profundamente significativas a través del juego, el arte, la literatura y la exploración.
             </p>
 
             {/* Poste de flechas direccionales de madera fiel a la foto */}
@@ -241,7 +241,7 @@ export default function App() {
                   </li>
                   <li>
                     <span className="chk-badge"><Check size={14} /></span>
-                    Acompañamiento amoroso de las profes Mafe y Jessy
+                    Acompañamiento amoroso de las Teachers Mafe y Jessy
                   </li>
                   <li>
                     <span className="chk-badge"><Check size={14} /></span>
@@ -466,8 +466,8 @@ export default function App() {
                   </div>
 
                   <div className="sched-teachers-pills">
-                    <span>👩‍🏫 Profe Mafe</span>
-                    <span>👩‍🏫 Profe Jessy</span>
+                    <span>👩‍🏫 Teacher Mafe</span>
+                    <span>👩‍🏫 Teacher Jessy</span>
                   </div>
 
                   <a 
@@ -606,24 +606,24 @@ export default function App() {
       </section>
 
       {/* Sección del Equipo Pedagógico (Mafe y Jessy) */}
-      <section className="teachers-section" id="profesoras">
+      <section className="teachers-section" id="teachers">
         <div className="container">
           <div className="section-header">
             <span className="section-pill-tag">EQUIPO PEDAGÓGICO</span>
-            <h2 className="section-main-title">Conoce a tus <span>Profesoras</span></h2>
+            <h2 className="section-main-title">Conoce a tus <span>teachers</span></h2>
             <p className="section-intro-text">
               Profesionales dedicadas con vocación, amor y paciencia para acompañar el crecimiento de tu pequeño.
             </p>
           </div>
 
           <div className="teachers-grid">
-            {/* Profe Mafe */}
+            {/* Teacher Mafe */}
             <div className="teacher-card card-teacher-mafe">
               <div className="teacher-avatar-circle">
                 <span className="teacher-emoji">👩‍🏫</span>
                 <span className="teacher-badge-tag">Dirección Pedagógica</span>
               </div>
-              <h3 className="teacher-name">Profe Mafe</h3>
+              <h3 className="teacher-name">Teacher Mafe</h3>
               <p className="teacher-role">Especialista en desarrollo infantil y actividades creativas</p>
               <p className="teacher-bio">
                 Apasionada por el juego libre, el arte sensorial y la literatura infantil. Dedicada a construir un espacio cálido y seguro para cada aventurero.
@@ -639,13 +639,13 @@ export default function App() {
               </a>
             </div>
 
-            {/* Profe Jessy */}
+            {/* Teacher Jessy */}
             <div className="teacher-card card-teacher-jessy">
               <div className="teacher-avatar-circle">
                 <span className="teacher-emoji">🌟</span>
                 <span className="teacher-badge-tag">Acompañamiento & Lúdica</span>
               </div>
-              <h3 className="teacher-name">Profe Jessy</h3>
+              <h3 className="teacher-name">Teacher Jessy</h3>
               <p className="teacher-role">Especialista en dinámicas lúdicas, exploración y motricidad</p>
               <p className="teacher-bio">
                 Entusiasta de la música, el movimiento, los experimentos divertidos y el acompañamiento afectivo en cada etapa de crecimiento.
@@ -749,7 +749,7 @@ export default function App() {
               </span>
               <h2>Informes e Inscripciones</h2>
               <p className="contact-intro-p">
-                Ponte en contacto directo con las profes <strong>Mafe</strong> o <strong>Jessy</strong> para reservar cupos, conocer las instalaciones y aclarar cualquier inquietud sobre la experiencia de tu peque.
+                Ponte en contacto directo con las Teachers <strong>Mafe</strong> o <strong>Jessy</strong> para reservar cupos, conocer las instalaciones y aclarar cualquier inquietud sobre la experiencia de tu peque.
               </p>
 
               <div className="contact-channels-stack">
@@ -765,7 +765,7 @@ export default function App() {
                     <MessageCircle size={28} />
                   </div>
                   <div className="channel-meta">
-                    <span className="ch-label">WHATSAPP DIRECTO • PROFE MAFE</span>
+                    <span className="ch-label">WHATSAPP DIRECTO • Teacher MAFE</span>
                     <span className="ch-number">+57 310 401 6167</span>
                     <span className="ch-helper">Toca aquí para chatear inmediatamente con Mafe</span>
                   </div>
@@ -783,7 +783,7 @@ export default function App() {
                     <MessageCircle size={28} />
                   </div>
                   <div className="channel-meta">
-                    <span className="ch-label label-jessy">WHATSAPP DIRECTO • PROFE JESSY</span>
+                    <span className="ch-label label-jessy">WHATSAPP DIRECTO • Teacher JESSY</span>
                     <span className="ch-number">+57 311 698 7216</span>
                     <span className="ch-helper">Toca aquí para chatear inmediatamente con Jessy</span>
                   </div>
@@ -799,7 +799,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Formulario React con selección de Profesora y enlace dinámico */}
+            {/* Formulario React con selección de Teacher y enlace dinámico */}
             <div className="contact-right">
               <div className="contact-form-panel">
                 <h3>Reserva Rápida de Cupo</h3>
@@ -807,7 +807,7 @@ export default function App() {
 
                 <form onSubmit={handleSubmit}>
                   <div className="form-field">
-                    <label>¿A qué profesora deseas escribir?</label>
+                    <label>¿A qué Teacher deseas escribir?</label>
                     <div className="teacher-select-radio-group">
                       <label className={`radio-pill ${formData.teacher === 'mafe' ? 'selected' : ''}`}>
                         <input 
@@ -817,7 +817,7 @@ export default function App() {
                           checked={formData.teacher === 'mafe'}
                           onChange={() => setFormData({...formData, teacher: 'mafe'})}
                         />
-                        <span>👩‍🏫 Profe Mafe (+57 310 401 6167)</span>
+                        <span>👩‍🏫 Teacher Mafe (+57 310 401 6167)</span>
                       </label>
                       <label className={`radio-pill ${formData.teacher === 'jessy' ? 'selected' : ''}`}>
                         <input 
@@ -827,7 +827,7 @@ export default function App() {
                           checked={formData.teacher === 'jessy'}
                           onChange={() => setFormData({...formData, teacher: 'jessy'})}
                         />
-                        <span>🌟 Profe Jessy (+57 311 698 7216)</span>
+                        <span>🌟 Teacher Jessy (+57 311 698 7216)</span>
                       </label>
                     </div>
                   </div>
@@ -878,7 +878,7 @@ export default function App() {
                   </div>
 
                   <button type="submit" className="form-send-btn">
-                    <Send size={18} /> Enviar Mensaje a {formData.teacher === 'jessy' ? 'Profe Jessy' : 'Profe Mafe'}
+                    <Send size={18} /> Enviar Mensaje a {formData.teacher === 'jessy' ? 'Teacher Jessy' : 'Teacher Mafe'}
                   </button>
                 </form>
               </div>
@@ -900,7 +900,7 @@ export default function App() {
             </div>
 
             <div className="footer-director">
-              <p>Equipo Pedagógico: <strong>Profe Mafe & Profe Jessy</strong></p>
+              <p>Equipo Pedagógico: <strong>Teacher Mafe & Teacher Jessy</strong></p>
               <p>WhatsApp Mafe: <strong>+57 310 401 6167</strong></p>
               <p>WhatsApp Jessy: <strong>+57 311 698 7216</strong></p>
             </div>
@@ -950,7 +950,7 @@ export default function App() {
             >
               <MessageCircle size={20} />
               <div>
-                <strong>Profe Mafe</strong>
+                <strong>Teacher Mafe</strong>
                 <small>+57 310 401 6167</small>
               </div>
             </a>
@@ -963,7 +963,7 @@ export default function App() {
             >
               <MessageCircle size={20} />
               <div>
-                <strong>Profe Jessy</strong>
+                <strong>Teacher Jessy</strong>
                 <small>+57 311 698 7216</small>
               </div>
             </a>
@@ -976,7 +976,7 @@ export default function App() {
           aria-label="Abrir opciones de WhatsApp"
         >
           <MessageCircle size={26} />
-          <span>Escribir a las Profes</span>
+          <span>Escribir a las Teachers</span>
         </button>
       </div>
     </div>
