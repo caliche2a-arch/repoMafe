@@ -46,7 +46,7 @@ export default function App() {
     e.preventDefault();
     handleConfetti();
     const textMsg = `¡Hola Maria Fernanda! Mi nombre es ${formData.parentName}. Deseo información e inscribir a mi peque ${formData.childName} (${formData.childAge}) a Hora de Aventura. ${formData.message ? `Comentario adicional: ${formData.message}` : ''}`;
-    const whatsappUrl = `https://wa.me/57310406167?text=${encodeURIComponent(textMsg)}`;
+    const whatsappUrl = `https://wa.me/573104016167?text=${encodeURIComponent(textMsg)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -57,7 +57,7 @@ export default function App() {
         <div className="container top-bar-content">
           <span>🎒 <strong>Inscripciones abiertas:</strong> Cupos limitados para grupos pequeños</span>
           <a 
-            href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+            href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="top-link"
@@ -159,7 +159,7 @@ export default function App() {
 
             <div className="hero-cta-buttons">
               <a 
-                href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20apartar%20un%20cupo%20para%20Hora%20de%20Aventura" 
+                href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20apartar%20un%20cupo%20para%20Hora%20de%20Aventura" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-main-whatsapp"
@@ -229,7 +229,7 @@ export default function App() {
               </div>
 
               <a 
-                href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20por%20$15.000%20para%20Hora%20de%20Aventura" 
+                href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20por%20$15.000%20para%20Hora%20de%20Aventura" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="card-action-btn"
@@ -442,7 +442,7 @@ export default function App() {
                   </div>
 
                   <a 
-                    href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20el%20horario%20de%204:00%20a%206:00%20PM" 
+                    href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20el%20horario%20de%204:00%20a%206:00%20PM" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="card-action-btn"
@@ -668,7 +668,7 @@ export default function App() {
 
               <div className="contact-channels-stack">
                 <a 
-                  href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+                  href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="channel-btn channel-whatsapp"
@@ -679,7 +679,7 @@ export default function App() {
                   </div>
                   <div className="channel-meta">
                     <span className="ch-label">WHATSAPP DIRECTO</span>
-                    <span className="ch-number">+57 310 406 167</span>
+                    <span className="ch-number">+57 310 401 6167</span>
                     <span className="ch-helper">Toca aquí para chatear inmediatamente con Maria Fernanda</span>
                   </div>
                 </a>
@@ -747,7 +747,7 @@ export default function App() {
                   </div>
 
                   <button type="submit" className="form-send-btn">
-                    <Send size={18} /> Enviar Mensaje a Maria Fernanda (+57 310 406 167)
+                    <Send size={18} /> Enviar Mensaje a Maria Fernanda (+57 310 401 6167)
                   </button>
                 </form>
               </div>
@@ -770,7 +770,7 @@ export default function App() {
 
             <div className="footer-director">
               <p>Contacto Pedagógico: <strong>Maria Fernanda</strong></p>
-              <p>WhatsApp: <strong>+57 310 406 167</strong></p>
+              <p>WhatsApp: <strong>+57 310 401 6167</strong></p>
             </div>
           </div>
 
@@ -782,7 +782,7 @@ export default function App() {
 
       {/* Botón flotante de WhatsApp siempre visible */}
       <a 
-        href="https://wa.me/57310406167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+        href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="floating-whatsapp"
