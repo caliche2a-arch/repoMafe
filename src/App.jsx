@@ -100,7 +100,16 @@ export default function App() {
                 <span className="logo-r">R</span>
                 <span className="logo-a">A</span>
                 <span className="logo-de">de</span>
-                <span className="logo-aventura">AVENTURA</span>
+                <span className="logo-aventura-wrap">
+                  <span className="let-a1">A</span>
+                  <span className="let-v">V</span>
+                  <span className="let-e">E</span>
+                  <span className="let-n">N</span>
+                  <span className="let-t">T</span>
+                  <span className="let-u">U</span>
+                  <span className="let-r2">R</span>
+                  <span className="let-a2">A</span>
+                </span>
               </div>
               <span className="logo-tagline">Jugar • Crear • Explorar • Crecer</span>
             </div>
@@ -112,7 +121,7 @@ export default function App() {
             <a href="#edades" onClick={() => setMobileMenuOpen(false)}>Edades</a>
             <a href="#semana" onClick={() => setMobileMenuOpen(false)}>Programación</a>
             <a href="#beneficios" onClick={() => setMobileMenuOpen(false)}>Beneficios</a>
-            <a href="#teachers" onClick={() => setMobileMenuOpen(false)}>teachers</a>
+            <a href="#teachers" onClick={() => setMobileMenuOpen(false)}>Teachers</a>
             <a 
               href="#contacto" 
               className="nav-btn-cta" 
@@ -309,9 +318,11 @@ export default function App() {
       {/* ¿Qué hacemos en Hora de Aventura? */}
       <section className="activities-section" id="actividades">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header activities-header-spaced">
             <span className="section-pill-tag">EXPLORACIÓN SENSORIAL</span>
-            <h2 className="section-main-title">¿Qué hacemos en <span>Hora de Aventura?</span></h2>
+            <h2 className="section-main-title activities-main-title">
+              ¿Qué hacemos en <span className="highlight-aventura-title">Hora de Aventura?</span>
+            </h2>
             <p className="section-intro-text">
               Propuestas diseñadas para estimular la curiosidad innata de tu hijo en cada momento.
             </p>

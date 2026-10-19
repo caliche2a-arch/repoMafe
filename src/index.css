@@ -207,11 +207,23 @@ h1, h2, h3, h4, .brand-font {
   margin: 0 4px;
   letter-spacing: 0.5px;
 }
-.logo-aventura {
-  color: var(--c-teal);
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0px #cff3f2;
+.logo-aventura-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 0.8px;
+  margin-left: 2px;
 }
+
+/* Letras de AVENTURA intercaladas con la paleta alegre del afiche */
+.logo-aventura-wrap .let-a1 { color: #0E9B97; text-shadow: 2px 2px 0px #C8EFEF; } /* Teal */
+.logo-aventura-wrap .let-v  { color: #F37023; text-shadow: 2px 2px 0px #FFE3D1; } /* Orange */
+.logo-aventura-wrap .let-e  { color: #FDB813; text-shadow: 2px 2px 0px #FFF3CD; } /* Yellow */
+.logo-aventura-wrap .let-n  { color: #E93F78; text-shadow: 2px 2px 0px #FFDCE7; } /* Pink */
+.logo-aventura-wrap .let-t  { color: #48B749; text-shadow: 2px 2px 0px #D8F5D9; } /* Green */
+.logo-aventura-wrap .let-u  { color: #745296; text-shadow: 2px 2px 0px #E7DCF2; } /* Purple */
+.logo-aventura-wrap .let-r2 { color: #1A75BB; text-shadow: 2px 2px 0px #D8EBFA; } /* Blue */
+.logo-aventura-wrap .let-a2 { color: #E93F78; text-shadow: 2px 2px 0px #FFDCE7; } /* Pink */
+
 
 .logo-tagline {
   font-size: 0.72rem;
@@ -796,12 +808,45 @@ h1, h2, h3, h4, .brand-font {
   font-weight: 600;
 }
 
+.activities-header-spaced {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.activities-main-title {
+  font-size: 2.6rem;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+.highlight-aventura-title {
+  display: inline-block;
+  background: linear-gradient(135deg, #0E9B97 0%, #158380 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding: 0 4px;
+}
+
+.highlight-aventura-title::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(253, 184, 19, 0.35);
+  border-radius: 4px;
+  z-index: -1;
+}
+
 /* ===================================================
    ¿QUÉ HACEMOS EN HORA DE AVENTURA?
    =================================================== */
 .activities-section {
-  padding: 4rem 0;
+  padding: 5rem 0 4.5rem;
   background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, var(--bg-crema) 100%);
+  border-top: 2px dashed rgba(253, 184, 19, 0.3);
 }
 
 .activities-grid {
