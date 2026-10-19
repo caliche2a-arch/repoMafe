@@ -624,9 +624,9 @@ export default function App() {
                 <span className="teacher-badge-tag">Dirección Pedagógica</span>
               </div>
               <h3 className="teacher-name">Teacher Mafe</h3>
-              <p className="teacher-role">Especialista en desarrollo infantil y actividades creativas</p>
+              <p className="teacher-role">Licenciada en Educación para la Primera Infancia</p>
               <p className="teacher-bio">
-                Apasionada por el juego libre, el arte sensorial y la literatura infantil. Dedicada a construir un espacio cálido y seguro para cada aventurero.
+                Licenciada en Educación para la Primera Infancia con más de 6 años de experiencia en formación y acompañamiento pedagógico, egresada de la Universidad de San Buenaventura Cali.
               </p>
               <a 
                 href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20hacerte%20una%20consulta%20sobre%20Hora%20de%20Aventura" 
@@ -646,9 +646,9 @@ export default function App() {
                 <span className="teacher-badge-tag">Acompañamiento & Lúdica</span>
               </div>
               <h3 className="teacher-name">Teacher Jessy</h3>
-              <p className="teacher-role">Especialista en dinámicas lúdicas, exploración y motricidad</p>
+              <p className="teacher-role">Licenciada en Educación Inicial</p>
               <p className="teacher-bio">
-                Entusiasta de la música, el movimiento, los experimentos divertidos y el acompañamiento afectivo en cada etapa de crecimiento.
+                Licenciada en Educación Inicial con 6 años de experiencia, egresada de la Universidad de San Buenaventura Cali.
               </p>
               <a 
                 href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20hacerte%20una%20consulta%20sobre%20Hora%20de%20Aventura" 
