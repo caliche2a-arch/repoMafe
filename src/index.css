@@ -1875,6 +1875,11 @@ h1, h2, h3, h4, .brand-font {
   letter-spacing: 1px;
 }
 
+.dev-company-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .dev-company-name {
   display: block;
   font-family: 'Fredoka', cursive;
@@ -1882,6 +1887,12 @@ h1, h2, h3, h4, .brand-font {
   color: #FDB813;
   letter-spacing: 0.5px;
   margin: 2px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dev-company-link:hover .dev-company-name {
+  color: #FFF;
+  transform: translateX(4px);
 }
 
 .dev-tagline {

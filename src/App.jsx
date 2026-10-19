@@ -914,17 +914,24 @@ export default function App() {
               </div>
               <div className="dev-banner-text">
                 <span className="dev-intro">Página diseñada y desarrollada con orgullo por</span>
-                <strong className="dev-company-name">BCode - Business Software Consulting</strong>
+                <a 
+                  href="https://bcode-one.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="dev-company-link"
+                >
+                  <strong className="dev-company-name">BCode - Business Software Consulting</strong>
+                </a>
                 <p className="dev-tagline">Transformamos ideas en experiencias web y software de alto impacto.</p>
               </div>
               <div className="dev-banner-action">
                 <a 
-                  href="https://wa.me/573104016167?text=Hola%20BCode,%20me%20gust%C3%B3%20esta%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto" 
+                  href="https://bcode-one.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-agency-contact"
                 >
-                  <Sparkles size={14} /> Contratar a BCode
+                  <Sparkles size={14} /> Visitar BCode
                 </a>
               </div>
             </div>
