@@ -6,7 +6,7 @@ Landing page en **React + Vite** para promocionar los servicios pedagógicos y l
 - Desarrollada con React y Vite
 - Paleta y diseño fiel a la identidad de marca
 - 100% Responsive
-- Integración de contacto y reserva directa a WhatsApp con Maria Fernanda (+57 310 401 6167)
+- Integración de contacto y reserva directa a WhatsApp con Maria Fernanda (+57 310 401 6167 (Profe Mafe) y +57 311 698 7216 (Profe Jessy))
 - Iconografía con Lucide React y efectos interactivos
 
 ## Instalación y Ejecución Local

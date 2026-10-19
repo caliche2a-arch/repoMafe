@@ -20,16 +20,21 @@ import {
   FlaskConical,
   UtensilsCrossed,
   Music,
-  Moon
+  Moon,
+  GraduationCap,
+  Code
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [teacherSelected, setTeacherSelected] = useState('mafe'); // 'mafe' | 'jessy'
+  const [floatingMenuOpen, setFloatingMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     parentName: '',
     childName: '',
     childAge: '2 a 3 años',
+    teacher: 'mafe',
     message: ''
   });
 
@@ -45,8 +50,12 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleConfetti();
-    const textMsg = `¡Hola Maria Fernanda! Mi nombre es ${formData.parentName}. Deseo información e inscribir a mi peque ${formData.childName} (${formData.childAge}) a Hora de Aventura. ${formData.message ? `Comentario adicional: ${formData.message}` : ''}`;
-    const whatsappUrl = `https://wa.me/573104016167?text=${encodeURIComponent(textMsg)}`;
+    const isJessy = formData.teacher === 'jessy';
+    const teacherName = isJessy ? 'Jessy' : 'Mafe';
+    const teacherPhone = isJessy ? '573116987216' : '573104016167';
+
+    const textMsg = `¡Hola profe ${teacherName}! Mi nombre es ${formData.parentName}. Deseo información e inscribir a mi peque ${formData.childName} (${formData.childAge}) a Hora de Aventura. ${formData.message ? `Comentario adicional: ${formData.message}` : ''}`;
+    const whatsappUrl = `https://wa.me/${teacherPhone}?text=${encodeURIComponent(textMsg)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -56,14 +65,24 @@ export default function App() {
       <div className="top-bar">
         <div className="container top-bar-content">
           <span>🎒 <strong>Inscripciones abiertas:</strong> Cupos limitados para grupos pequeños</span>
-          <a 
-            href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="top-link"
-          >
-            <MessageCircle size={15} /> WhatsApp Directo
-          </a>
+          <div className="top-contact-pills">
+            <a 
+              href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="top-link"
+            >
+              <MessageCircle size={14} /> WhatsApp Mafe
+            </a>
+            <a 
+              href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="top-link top-link-jessy"
+            >
+              <MessageCircle size={14} /> WhatsApp Jessy
+            </a>
+          </div>
         </div>
       </div>
 
@@ -93,6 +112,7 @@ export default function App() {
             <a href="#edades" onClick={() => setMobileMenuOpen(false)}>Edades</a>
             <a href="#semana" onClick={() => setMobileMenuOpen(false)}>Programación</a>
             <a href="#beneficios" onClick={() => setMobileMenuOpen(false)}>Beneficios</a>
+            <a href="#profesoras" onClick={() => setMobileMenuOpen(false)}>Profesoras</a>
             <a 
               href="#contacto" 
               className="nav-btn-cta" 
@@ -136,7 +156,7 @@ export default function App() {
             </h1>
 
             <p className="hero-desc">
-              Un espacio mágico, cálido y seguro donde los niños viven experiencias divertidas y profundamente significativas a través del juego, el arte, la literatura y la exploración.
+              Un espacio mágico, cálido y seguro dirigido por las profes <strong>Mafe</strong> y <strong>Jessy</strong>, donde los niños viven experiencias divertidas y profundamente significativas a través del juego, el arte, la literatura y la exploración.
             </p>
 
             {/* Poste de flechas direccionales de madera fiel a la foto */}
@@ -159,16 +179,22 @@ export default function App() {
 
             <div className="hero-cta-buttons">
               <a 
-                href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20apartar%20un%20cupo%20para%20Hora%20de%20Aventura" 
+                href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20apartar%20un%20cupo%20para%20Hora%20de%20Aventura" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-main-whatsapp"
                 onClick={handleConfetti}
               >
-                <MessageCircle size={22} /> ¡Apartar Cupo con Mafe!
+                <MessageCircle size={22} /> Chatear con Mafe
               </a>
-              <a href="#contacto" className="btn-secondary-action">
-                <Phone size={18} /> Ver Contacto
+              <a 
+                href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20apartar%20un%20cupo%20para%20Hora%20de%20Aventura" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-secondary-whatsapp-jessy"
+                onClick={handleConfetti}
+              >
+                <MessageCircle size={22} /> Chatear con Jessy
               </a>
             </div>
 
@@ -215,7 +241,7 @@ export default function App() {
                   </li>
                   <li>
                     <span className="chk-badge"><Check size={14} /></span>
-                    Acompañamiento pedagógico y afectivo
+                    Acompañamiento amoroso de las profes Mafe y Jessy
                   </li>
                   <li>
                     <span className="chk-badge"><Check size={14} /></span>
@@ -229,9 +255,7 @@ export default function App() {
               </div>
 
               <a 
-                href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20por%20$15.000%20para%20Hora%20de%20Aventura" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="#contacto" 
                 className="card-action-btn"
                 onClick={handleConfetti}
               >
@@ -441,10 +465,13 @@ export default function App() {
                     <span className="quote-foot">✨ Experiencias diferentes a las pantallas ✨</span>
                   </div>
 
+                  <div className="sched-teachers-pills">
+                    <span>👩‍🏫 Profe Mafe</span>
+                    <span>👩‍🏫 Profe Jessy</span>
+                  </div>
+
                   <a 
-                    href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20reservar%20el%20horario%20de%204:00%20a%206:00%20PM" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                    href="#contacto" 
                     className="card-action-btn"
                     onClick={handleConfetti}
                   >
@@ -578,6 +605,65 @@ export default function App() {
         </div>
       </section>
 
+      {/* Sección del Equipo Pedagógico (Mafe y Jessy) */}
+      <section className="teachers-section" id="profesoras">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-pill-tag">EQUIPO PEDAGÓGICO</span>
+            <h2 className="section-main-title">Conoce a tus <span>Profesoras</span></h2>
+            <p className="section-intro-text">
+              Profesionales dedicadas con vocación, amor y paciencia para acompañar el crecimiento de tu pequeño.
+            </p>
+          </div>
+
+          <div className="teachers-grid">
+            {/* Profe Mafe */}
+            <div className="teacher-card card-teacher-mafe">
+              <div className="teacher-avatar-circle">
+                <span className="teacher-emoji">👩‍🏫</span>
+                <span className="teacher-badge-tag">Dirección Pedagógica</span>
+              </div>
+              <h3 className="teacher-name">Profe Mafe</h3>
+              <p className="teacher-role">Especialista en desarrollo infantil y actividades creativas</p>
+              <p className="teacher-bio">
+                Apasionada por el juego libre, el arte sensorial y la literatura infantil. Dedicada a construir un espacio cálido y seguro para cada aventurero.
+              </p>
+              <a 
+                href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20hacerte%20una%20consulta%20sobre%20Hora%20de%20Aventura" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-teacher-chat btn-chat-mafe"
+                onClick={handleConfetti}
+              >
+                <MessageCircle size={18} /> Escribir a Mafe (+57 310 401 6167)
+              </a>
+            </div>
+
+            {/* Profe Jessy */}
+            <div className="teacher-card card-teacher-jessy">
+              <div className="teacher-avatar-circle">
+                <span className="teacher-emoji">🌟</span>
+                <span className="teacher-badge-tag">Acompañamiento & Lúdica</span>
+              </div>
+              <h3 className="teacher-name">Profe Jessy</h3>
+              <p className="teacher-role">Especialista en dinámicas lúdicas, exploración y motricidad</p>
+              <p className="teacher-bio">
+                Entusiasta de la música, el movimiento, los experimentos divertidos y el acompañamiento afectivo en cada etapa de crecimiento.
+              </p>
+              <a 
+                href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20hacerte%20una%20consulta%20sobre%20Hora%20de%20Aventura" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-teacher-chat btn-chat-jessy"
+                onClick={handleConfetti}
+              >
+                <MessageCircle size={18} /> Escribir a Jessy (+57 311 698 7216)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Beneficios Niños & Familias */}
       <section className="benefits-section" id="beneficios">
         <div className="container">
@@ -653,7 +739,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contacto & Inscripciones con Maria Fernanda */}
+      {/* Contacto & Inscripciones con Mafe y Jessy */}
       <section className="contact-section" id="contacto">
         <div className="container">
           <div className="contact-card-hero">
@@ -663,12 +749,13 @@ export default function App() {
               </span>
               <h2>Informes e Inscripciones</h2>
               <p className="contact-intro-p">
-                Ponte en contacto directo con <strong>Maria Fernanda</strong> para reservar cupos, conocer las instalaciones y aclarar cualquier inquietud sobre la experiencia de tu peque.
+                Ponte en contacto directo con las profes <strong>Mafe</strong> o <strong>Jessy</strong> para reservar cupos, conocer las instalaciones y aclarar cualquier inquietud sobre la experiencia de tu peque.
               </p>
 
               <div className="contact-channels-stack">
+                {/* Canal Mafe */}
                 <a 
-                  href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+                  href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="channel-btn channel-whatsapp"
@@ -678,9 +765,27 @@ export default function App() {
                     <MessageCircle size={28} />
                   </div>
                   <div className="channel-meta">
-                    <span className="ch-label">WHATSAPP DIRECTO</span>
+                    <span className="ch-label">WHATSAPP DIRECTO • PROFE MAFE</span>
                     <span className="ch-number">+57 310 401 6167</span>
-                    <span className="ch-helper">Toca aquí para chatear inmediatamente con Maria Fernanda</span>
+                    <span className="ch-helper">Toca aquí para chatear inmediatamente con Mafe</span>
+                  </div>
+                </a>
+
+                {/* Canal Jessy */}
+                <a 
+                  href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="channel-btn channel-whatsapp channel-jessy"
+                  onClick={handleConfetti}
+                >
+                  <div className="ch-icon ch-icon-jessy">
+                    <MessageCircle size={28} />
+                  </div>
+                  <div className="channel-meta">
+                    <span className="ch-label label-jessy">WHATSAPP DIRECTO • PROFE JESSY</span>
+                    <span className="ch-number">+57 311 698 7216</span>
+                    <span className="ch-helper">Toca aquí para chatear inmediatamente con Jessy</span>
                   </div>
                 </a>
               </div>
@@ -694,13 +799,39 @@ export default function App() {
               </div>
             </div>
 
-            {/* Formulario React con enlace dinámico a WhatsApp */}
+            {/* Formulario React con selección de Profesora y enlace dinámico */}
             <div className="contact-right">
               <div className="contact-form-panel">
                 <h3>Reserva Rápida de Cupo</h3>
                 <p>Completa los datos y te redirigirá a WhatsApp con el mensaje listo:</p>
 
                 <form onSubmit={handleSubmit}>
+                  <div className="form-field">
+                    <label>¿A qué profesora deseas escribir?</label>
+                    <div className="teacher-select-radio-group">
+                      <label className={`radio-pill ${formData.teacher === 'mafe' ? 'selected' : ''}`}>
+                        <input 
+                          type="radio" 
+                          name="teacherOption" 
+                          value="mafe" 
+                          checked={formData.teacher === 'mafe'}
+                          onChange={() => setFormData({...formData, teacher: 'mafe'})}
+                        />
+                        <span>👩‍🏫 Profe Mafe (+57 310 401 6167)</span>
+                      </label>
+                      <label className={`radio-pill ${formData.teacher === 'jessy' ? 'selected' : ''}`}>
+                        <input 
+                          type="radio" 
+                          name="teacherOption" 
+                          value="jessy" 
+                          checked={formData.teacher === 'jessy'}
+                          onChange={() => setFormData({...formData, teacher: 'jessy'})}
+                        />
+                        <span>🌟 Profe Jessy (+57 311 698 7216)</span>
+                      </label>
+                    </div>
+                  </div>
+
                   <div className="form-field">
                     <label>Nombre del acudiente (Mamá / Papá):</label>
                     <input 
@@ -747,7 +878,7 @@ export default function App() {
                   </div>
 
                   <button type="submit" className="form-send-btn">
-                    <Send size={18} /> Enviar Mensaje a Maria Fernanda (+57 310 401 6167)
+                    <Send size={18} /> Enviar Mensaje a {formData.teacher === 'jessy' ? 'Profe Jessy' : 'Profe Mafe'}
                   </button>
                 </form>
               </div>
@@ -756,7 +887,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer con Crédito Publicitario de BCode-Business Software Consulting */}
       <footer className="footer-area">
         <div className="container">
           <div className="footer-content">
@@ -769,8 +900,33 @@ export default function App() {
             </div>
 
             <div className="footer-director">
-              <p>Contacto Pedagógico: <strong>Maria Fernanda</strong></p>
-              <p>WhatsApp: <strong>+57 310 401 6167</strong></p>
+              <p>Equipo Pedagógico: <strong>Profe Mafe & Profe Jessy</strong></p>
+              <p>WhatsApp Mafe: <strong>+57 310 401 6167</strong></p>
+              <p>WhatsApp Jessy: <strong>+57 311 698 7216</strong></p>
+            </div>
+          </div>
+
+          {/* Banner Publicitario Prominente de BCode-Business Software Consulting */}
+          <div className="developer-agency-banner">
+            <div className="dev-banner-card">
+              <div className="dev-banner-badge">
+                <Code size={16} /> Soluciones Digitales
+              </div>
+              <div className="dev-banner-text">
+                <span className="dev-intro">Página diseñada y desarrollada con orgullo por</span>
+                <strong className="dev-company-name">BCode - Business Software Consulting</strong>
+                <p className="dev-tagline">Transformamos ideas en experiencias web y software de alto impacto.</p>
+              </div>
+              <div className="dev-banner-action">
+                <a 
+                  href="https://wa.me/573104016167?text=Hola%20BCode,%20me%20gust%C3%B3%20esta%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-agency-contact"
+                >
+                  <Sparkles size={14} /> Contratar a BCode
+                </a>
+              </div>
             </div>
           </div>
 
@@ -780,18 +936,49 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Botón flotante de WhatsApp siempre visible */}
-      <a 
-        href="https://wa.me/573104016167?text=Hola%20Maria%20Fernanda,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="floating-whatsapp"
-        aria-label="Hablar con Maria Fernanda por WhatsApp"
-        onClick={handleConfetti}
-      >
-        <MessageCircle size={24} />
-        <span>Habla con Mafe</span>
-      </a>
+      {/* Menú Flotante Doble de WhatsApp (Mafe y Jessy) */}
+      <div className="floating-whatsapp-container">
+        {floatingMenuOpen && (
+          <div className="floating-options-card">
+            <span className="floating-options-title">¿Con quién deseas chatear?</span>
+            <a 
+              href="https://wa.me/573104016167?text=Hola%20Mafe,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="float-teacher-btn float-mafe"
+              onClick={handleConfetti}
+            >
+              <MessageCircle size={20} />
+              <div>
+                <strong>Profe Mafe</strong>
+                <small>+57 310 401 6167</small>
+              </div>
+            </a>
+            <a 
+              href="https://wa.me/573116987216?text=Hola%20Jessy,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Hora%20de%20Aventura" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="float-teacher-btn float-jessy"
+              onClick={handleConfetti}
+            >
+              <MessageCircle size={20} />
+              <div>
+                <strong>Profe Jessy</strong>
+                <small>+57 311 698 7216</small>
+              </div>
+            </a>
+          </div>
+        )}
+
+        <button 
+          className="floating-whatsapp-trigger" 
+          onClick={() => setFloatingMenuOpen(!floatingMenuOpen)}
+          aria-label="Abrir opciones de WhatsApp"
+        >
+          <MessageCircle size={26} />
+          <span>Escribir a las Profes</span>
+        </button>
+      </div>
     </div>
   );
 }
